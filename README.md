@@ -11,7 +11,7 @@ Prerequisite is a modified reference genome that has the expression vector inclu
 
 ##### ontarget_reads_one_site.sh
 
-Chimeric reads are grouped according to their junction sites, and a fastq file with only on-target reads will be generated. To counter mapping uncertainty, reads with a start/end alignment position within 200bp in respect to their junction site will be considered as well. The script requires a scaffold name, the junction site coordinate, an alignment.stats file (output of stats_from_bam <input.bam> -o <outputfile.stats> which is part of the ont pomoxis package) and a fastq file. 
+Chimeric reads are grouped according to their junction sites, and a fastq file with only on-target reads will be generated. To counter soft clipping or errors introduced by basecalling, reads with a start/end alignment position within 200bp in respect to their junction site will be considered as well. The script requires a scaffold name, the junction site coordinate, an alignment.stats file (output of stats_from_bam <input.bam> -o <outputfile.stats> which is part of the ont pomoxis package) and a fastq file. 
 
 The on-target reads were further assembled and polished. For polishing, a script of Gilpatrick et al (2020) was modified (https://github.com/timplab/Cas9Enrichment/blob/master/Brca1_assembly/Racon_medaka_polishing.sh). The junction sites were determined via blastn. 
 
